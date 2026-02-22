@@ -14,7 +14,7 @@ pass by value, pass by reference가 보던 책에 나오는데, call by value, c
 <br/>
 ### Call by Value
 **함수에 넘겨준 어떤 argument든 함수가 반환될 때 caller의 스코프에선 아무것도 변하지 않는다.**<br/>
-*Call by value (also referred to as pass by value) is the most common evaluation strategy, used in languages as different as C and Scheme. In call by value, the argument expression is evaluated, and the resulting value is bound to the corresponding variable in the function (frequently by copying the value into a new memory region). If the function or procedure is able to assign values to its parameters, only its local variable is assigned—<span style="color:#ff6d70">that is, anything passed into a function call is unchanged in the caller's scope when the function returns.
+*Call by value (also referred to as pass by value) is the most common evaluation strategy, used in languages as different as C and Scheme. In call by value, the argument expression is evaluated, and the resulting value is bound to the corresponding variable in the function (frequently by copying the value into a new memory region). If the function or procedure is able to assign values to its parameters, only its local variable is assigned—<span style={{color:"#ff6d70"}}>that is, anything passed into a function call is unchanged in the caller's scope when the function returns.
 </span>*
 
 
@@ -46,7 +46,7 @@ main에서 값을 넘겨주고 func이라는 callee function에서 받은 값이
 <br/>
 ### Call by reference
 **Call by reference는 값 자체를 전달하는 게 아니라, argument로 사용된 변수의 레퍼런스(address)를 전달하는 것이다. 그래서 함수가 argument로써 사용한 variable를 변경시킬 수 있다는 개념이다. 그게 Caller의 variable이라도.**<br/>
-*Call by reference (also referred to as pass by reference) is an evaluation strategy where a function receives an implicit reference to a variable used as argument, rather than a copy of its value. <span style="color:#ff6d70">This typically means that the function can modify (i.e. assign to) the variable used as argument—something that will be seen by its caller. </span>Call by reference can therefore be used to provide an additional channel of communication between the called function and the calling function. A call-by-reference language makes it more difficult for a programmer to track the effects of a function call, and may introduce subtle bugs. A simple "litmus test" for whether a language supports call-by-reference semantics is if it's possible to write a traditional swap(a,b) function in the language.*
+*Call by reference (also referred to as pass by reference) is an evaluation strategy where a function receives an implicit reference to a variable used as argument, rather than a copy of its value. <span style={{color:"#ff6d70"}}>This typically means that the function can modify (i.e. assign to) the variable used as argument—something that will be seen by its caller. </span>Call by reference can therefore be used to provide an additional channel of communication between the called function and the calling function. A call-by-reference language makes it more difficult for a programmer to track the effects of a function call, and may introduce subtle bugs. A simple "litmus test" for whether a language supports call-by-reference semantics is if it's possible to write a traditional swap(a,b) function in the language.*
 
 <br/>
 ### Call by value, Call by reference 예제

@@ -41,9 +41,9 @@ const siteMetadata = {
     //   googleAnalyticsId: '', // e.g. G-XXXXXXX
     // },
   },
-  // newsletter: {
-  //   provider: 'buttondown',
-  // },
+  newsletter: {
+    provider: '',
+  },
   comments: {
     // If you want to use an analytics provider you have to add it to the
     // content security policy in the `next.config.js` file.

@@ -20,6 +20,7 @@ metaspace로 바뀌고 나서는 gc에 의해 발생하는 OutOfMemory Error가 
 
 + Java7 HotSpot JVM
 
+```
 <----- Java Heap ----->             <--- Native Memory --->
 +------+----+----+-----+-----------+--------+--------------+
 | Eden | S0 | S1 | Old | Permanent | C Heap | Thread Stack |
@@ -28,14 +29,17 @@ metaspace로 바뀌고 나서는 gc에 의해 발생하는 OutOfMemory Error가 
                        Permanent Heap
 S0: Survivor 0
 S1: Survivor 1
+```
 
 
 + Java8 HotSpot JVM
 
+```
 <----- Java Heap -----> <--------- Native Memory --------->
 +------+----+----+-----+-----------+--------+--------------+
 | Eden | S0 | S1 | Old | Metaspace | C Heap | Thread Stack |
 +------+----+----+-----+-----------+--------+--------------+
+```
 
 
 [출처](https://johngrib.github.io/wiki/java8-why-permgen-removed/)

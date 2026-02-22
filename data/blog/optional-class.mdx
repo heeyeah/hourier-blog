@@ -33,15 +33,15 @@ Optional instance는 어떻게 만들까? 면접 질문으로 받았었는데, O
 
 Optional의 instance는 Optional 클래스 내부에 **static method** 3방법으로 생성할 수 있다. 종류는 다음과 같다.
 
-- **static <T> Optional<T> empty()**
+- **`static <T> Optional<T> empty()`**
 
 empty Optional instance를 반환한다. null을 담고 있는, 비어있는 Optional 객체를 얻어온다.
 
-- **static <T> Optional<T> of(T value)**
+- **`static <T> Optional<T> of(T value)`**
 
 non-null value인 특정 값을 가지고 있는 Optional 객체를 반환한다. value가 null이면  NullPointerException 을 던진다.
 
-- **static <T> Optional<T> ofNullable(T value)**
+- **`static <T> Optional<T> ofNullable(T value)`**
 
 특정 value를 담은 Optional 객체인데 만약 값이 non-null이면 value를 반환하고 그렇지 않으면 empty Optional을 반환한다.  empty()  메소드와  of(value)  메소드가 합쳐진 형태라고 생각하면 된다.
 
@@ -53,8 +53,8 @@ Optional 클래스의 instance method를 사용해 접근할 수 있으며
 
 - get()
 - orElse(T other)
-- orElseGet(Supplier<? extends T> other)
-- orElseThrow(Supplier<? extends X> exceptionSupplier)
+- `orElseGet(Supplier<? extends T> other)`
+- `orElseThrow(Supplier<? extends X> exceptionSupplier)`
 - etc
 등의 메소드가 존재한다.
 

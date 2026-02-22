@@ -1,7 +1,25 @@
 {
+  "algorithm": 4,
+  "cloud": 5,
+  "java": 8,
+  "kubernetes": 11,
+  "k8s": 11,
+  "claude-code": 1,
+  "ai-agent": 1,
+  "에이전트-설계서": 1,
+  "security": 1,
+  "certificate": 1,
+  "https": 1,
+  "docker": 1,
+  "container": 1,
+  "dev": 2,
   "blog": 1,
   "introduction": 1,
-  "multi-author": 1,
-  "next-js": 1,
-  "feature": 1
+  "seminar": 7,
+  "next-js": 2,
+  "tailwind": 2,
+  "guide": 2,
+  "node": 2,
+  "feature": 1,
+  "spring": 3
 }

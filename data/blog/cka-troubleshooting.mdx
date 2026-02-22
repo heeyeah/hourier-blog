@@ -62,7 +62,7 @@ unable to load client CA file "/etc/kubernetes/pki/ca.crt": open /etc/kubernetes
 
 worker node failure인건 다 kubelet 문제네
 
-*<span style="color:#e449c7"> 😈kubelet 역할 : The kubelet is the primary "node agent" that runs on each node. It can register the node with the apiserver using one of: the hostname; a flag to override the hostname; or specific logic for a cloud provider.</span>*
+*<span style={{color:"#e449c7"}}> 😈kubelet 역할 : The kubelet is the primary "node agent" that runs on each node. It can register the node with the apiserver using one of: the hostname; a flag to override the hostname; or specific logic for a cloud provider.</span>*
 
 상태 확인
 
@@ -153,7 +153,7 @@ Jul 25 08:05:26 node01 kubelet[7966]: E0725 08:05:26.426155    7966 reflector.go
 .
 .
 ```
-As we can clearly see, kubelet is trying to connect to the API server on the <span style="color:#ef2323"> controlplane node on port 6553. This is incorrect.</span>
+As we can clearly see, kubelet is trying to connect to the API server on the <span style={{color:"#ef2323"}}> controlplane node on port 6553. This is incorrect.</span>
 To fix, correct the port on the kubeconfig file used by the kubelet.
 
 ``` yaml
