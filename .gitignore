@@ -1,5 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+.claude/
+
 # Dependency directories
 node_modules/
 /node_modules
@@ -64,3 +66,4 @@ yarn-error.log*
 
 # Contentlayer
 .contentlayer
+

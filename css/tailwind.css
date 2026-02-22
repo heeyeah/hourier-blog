@@ -104,7 +104,7 @@
       font-weight: 600;
     }
     & :where(code):not(pre code) {
-      color: var(--color-indigo-500);
+      color: #c90035;
     }
   }
 
