@@ -1,0 +1,67 @@
+---
+title: '[CKA] 10일 남기고 CKA준비하기'
+date: '2022-07-28'
+lastmod: '2022-07-28'
+tags: ['kubernetes', 'k8s']
+draft: false
+summary: '기본 환경 vim 설정파일 추가하기 /.vimrc에 저장해서 쓰기  sh tab을 2칸으로 설정 set tabstop=2 tab 사용시 발생하는 공백을 띄어쓰기(스페이스)로 채움 set expandtab...'
+authors: ['default']
+---
+## 기본 환경
+
+### vim 설정파일 추가하기
+`~/.vimrc`에 저장해서 쓰기
+``` sh
+# tab을 2칸으로 설정
+set tabstop=2
+
+# tab 사용시 발생하는 공백을 띄어쓰기(스페이스)로 채움
+set expandtab
+
+# shift(>, >>, <, << 등)를 2칸으로 설정
+set shiftwidth=2
+```
+
+### 알아두기
+- `kubectl config set-context <컨텍스트명>` 꼭 실행해주기
+- ubuntu20.04
+- k8s도 최신버전 사용
+- 북마크 정리하기 (Vivaldi 브라우저 설치)
+- `--dry-run=client -o yaml` 잘 사용하기
+
+
+### 꼭 나오는 것
+- etcd 스냅샷 생성 및 복구
+- 클러스터 노드 업그레이드
+- 파드 간 네트워크 구성
+
+### json path
+
+1. kubectl get nodes / kubectl get pods
+
+2. kubectl get nodes -o json / kubectl get pods -o json
+
+3. form the Json path query
+
+4. use the json path query with kubectl command
+
+## 문제를 체크해보자
+### etcd 버전 체크
+`kubectl get logs etcd-pod -n kube-system` 에서 `| grep version`
+
+### 클러스터 노드 업그레이드
+https://v1-20.docs.kubernetes.io/ko/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/
+
+보고 따라하면 되는데, drain은 controlplane에서 하고 worker node 업그레이드할 때는 `ssh node01` 해주고 실행하기
+
+### backup etcd
+
+ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 \
+--cacert=/etc/kubernetes/pki/etcd/ca.crt \
+--cert=/etc/kubernetes/pki/etcd/server.crt \
+--key=/etc/kubernetes/pki/etcd/server.key \
+snapshot save /opt/snapshot-pre-boot.db
+
+
+ETCDCTL_API=3 etcdctl  --data-dir /var/lib/etcd-from-backup \
+snapshot restore /opt/snapshot-pre-boot.db
